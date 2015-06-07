@@ -12,7 +12,7 @@ import org.bson.json.JsonWriterSettings;
 public class Helpers {
 	public static void printJson(Document document){
 		//true option will indent doc
-		JsonWriter jsonWriter = new JsonWriter(new StringWriter(), new JsonWriterSettings(JsonMode.SHELL, true));
+		JsonWriter jsonWriter = new JsonWriter(new StringWriter(), new JsonWriterSettings(JsonMode.SHELL, false));
 		new DocumentCodec().encode(jsonWriter, document, EncoderContext.builder()
 				.isEncodingCollectibleDocument(true).build());
 		System.out.println(jsonWriter.getWriter());
